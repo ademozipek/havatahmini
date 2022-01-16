@@ -15,6 +15,7 @@ import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.*
 import com.google.gson.GsonBuilder
 import com.ozipek.havatahmini.model.Data
+import java.util.*
 
 class WeatherViewModel : ViewModel() {
 
@@ -37,8 +38,11 @@ class WeatherViewModel : ViewModel() {
 
     private lateinit var locationCallback: LocationCallback
 
+    private lateinit var language : String
+
     init{
         weatherURL = ""
+        language = Locale.getDefault().toLanguageTag().toString().take(2)
     }
 
     @SuppressLint("MissingPermission")
@@ -53,7 +57,6 @@ class WeatherViewModel : ViewModel() {
                     41.10 veya 28.99 şeklinde geliyor koordinatlar*/
                     _lat.value = location.latitude.toString().take(5)
                     _lon.value = location.longitude.toString().take(5)
-                    println("${_lat.value} + ${_lon.value}")
                     getWeatherData(context)
                 }
             }
@@ -67,7 +70,7 @@ class WeatherViewModel : ViewModel() {
 
     private fun getWeatherData(context:Context){
 
-        weatherURL = "$URL?lat=${lat.value}&lon=${lon.value}&lang=tr&appid=$API_KEY&lang=tr&units=metric&mode=json"
+        weatherURL = "$URL?lat=${lat.value}&lon=${lon.value}&appid=$API_KEY&units=metric&mode=json&lang=$language"
         val stringRequest = StringRequest(Request.Method.POST,weatherURL, {
             val gsonBuilder = GsonBuilder()
             val gson = gsonBuilder.create()
@@ -83,25 +86,6 @@ class WeatherViewModel : ViewModel() {
         var requestQueue = Volley.newRequestQueue(context)
         requestQueue.add(stringRequest)
 
-        /*val stringRequest2 = StringRequest(Request.Method.POST,weatherURL, {
-            try{
-                val jsonResponse = JSONObject(it)
-                val jsonArray = jsonResponse.getJSONArray("weather")
-                val weatherStatus = jsonArray.getJSONObject(0).getString("description")
-
-                val weatherID = jsonArray.getJSONObject(0).getString("id")
-                println(jsonResponse.getString("name"))
-
-            }catch(e:Exception){
-                println("E: " + e.localizedMessage)
-            }
-
-        }, {
-            println("Hata: " + it.localizedMessage)
-        })
-
-        requestQueue = Volley.newRequestQueue(context)
-        requestQueue.add(stringRequest2)*/
     }
 
     fun contactUs(context : Context){
