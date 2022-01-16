@@ -13,4 +13,6 @@
     <string name="permissionError">مطلوب إذن الموقع</string>
     <string name="locationImageContentDesc">صورة الموقع</string>
     <string name="weatherAnimContentDesc">الرسوم المتحركة الطقس</string>
+    <string name="locationPermissionText">تحتاج إلى إعطاء إذن الموقع.</string>
+    <string name="snackbarButton">إعطاء إذن</string>
 </resources>

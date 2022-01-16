@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -108,7 +107,8 @@ class MainActivity : AppCompatActivity() {
                 } else -> {
                 // Eğer reddederse uygulama izin ayar ekranına göndermesi için Snackbar gösteriyoruz.
                 binding.weatherStatusText.text = resources.getText(R.string.permissionError)
-                Snackbar.make(binding.root,"Konum İzni Vermeniz Gerekmektedir.",Snackbar.LENGTH_INDEFINITE).setAction("İZİN VER", View.OnClickListener {
+                Snackbar.make(binding.root,getString(R.string.locationPermissionText),Snackbar.LENGTH_INDEFINITE).setAction(getString(
+                                    R.string.snackbarButton), View.OnClickListener {
                     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
                     val uri = Uri.fromParts("package",packageName, null)
                     intent.data = uri

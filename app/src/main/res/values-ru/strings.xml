@@ -13,4 +13,6 @@
     <string name="permissionError">Требуется разрешение на местоположение</string>
     <string name="locationImageContentDesc">Изображение местоположения</string>
     <string name="weatherAnimContentDesc">Погодная анимация</string>
+    <string name="locationPermissionText">Вам нужно дать разрешение на местоположение.</string>
+    <string name="snackbarButton">ДАВАТЬ РАЗРЕШЕНИЕ</string>
 </resources>

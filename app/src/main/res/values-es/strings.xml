@@ -13,4 +13,6 @@
     <string name="permissionError">Permiso de ubicación requerido</string>
     <string name="locationImageContentDesc">Imagen de ubicación</string>
     <string name="weatherAnimContentDesc">Animación meteorológica</string>
+    <string name="locationPermissionText">Necesita dar permiso de ubicación.</string>
+    <string name="snackbarButton">DAR PERMISO</string>
 </resources>

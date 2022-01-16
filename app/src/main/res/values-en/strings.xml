@@ -13,4 +13,6 @@
     <string name="permissionError">Location Permission Required</string>
     <string name="locationImageContentDesc">Location Image</string>
     <string name="weatherAnimContentDesc">Weather Animation</string>
+    <string name="locationPermissionText">You Need to Give Location Permission.</string>
+    <string name="snackbarButton">GIVE PERMISSION</string>
 </resources>

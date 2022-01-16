@@ -13,4 +13,6 @@
     <string name="permissionError">需要位置许可</string>
     <string name="locationImageContentDesc">位置图</string>
     <string name="weatherAnimContentDesc">天气动画</string>
+    <string name="locationPermissionText">您需要授予位置权限。</string>
+    <string name="snackbarButton">赋予权限</string>
 </resources>

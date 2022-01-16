@@ -12,4 +12,6 @@
     <string name="permissionError">Konum İzni Gerekiyor</string>
     <string name="locationImageContentDesc">Konum Görseli</string>
     <string name="weatherAnimContentDesc">Hava Durumu Animasyonu</string>
+    <string name="locationPermissionText">Konum İzni Vermeniz Gerekmektedir.</string>
+    <string name="snackbarButton">İZİN VER</string>
 </resources>
