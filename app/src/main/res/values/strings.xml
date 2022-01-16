@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Hava Tahmini</string>
+    <string name="locationText">Konum</string>
+    <string name="weatherStatusText">Yükleniyor...</string>
+    <string name="degreeText">°C</string>
+    <string name="feelsLikeText">Hissedilen Sıcaklık</string>
+    <string name="feelsLikeValue">-</string>
+    <string name="humidityText">Nem</string>
+    <string name="humidityValue">-</string>
+    <string name="contact_us">Bize Ulaşın</string>
+    <string name="dateText">Tarih</string>
+    <string name="permissionError">Konum İzni Gerekiyor</string>
+    <string name="locationImageContentDesc">Konum Görseli</string>
+    <string name="weatherAnimContentDesc">Hava Durumu Animasyonu</string>
+</resources>

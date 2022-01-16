@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">النشرة الجوية</string>
+    <string name="locationText">موقع</string>
+    <string name="weatherStatusText">...جار التحميل</string>
+    <string name="feelsLikeText">أحس كأنني</string>
+    <string name="degreeText">°C</string>
+    <string name="humidityText">رطوبة</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="humidityValue">-</string>
+    <string name="feelsLikeValue">-</string>
+    <string name="dateText">تاريخ</string>
+    <string name="permissionError">مطلوب إذن الموقع</string>
+    <string name="locationImageContentDesc">صورة الموقع</string>
+    <string name="weatherAnimContentDesc">الرسوم المتحركة الطقس</string>
+</resources>

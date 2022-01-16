@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pronóstico del tiempo</string>
+    <string name="locationText">Ubicación</string>
+    <string name="weatherStatusText">Cargando...</string>
+    <string name="degreeText">°C</string>
+    <string name="feelsLikeText">Se siente como</string>
+    <string name="feelsLikeValue">-</string>
+    <string name="humidityText">Humedad</string>
+    <string name="contact_us">Contacta con nosotros</string>
+    <string name="humidityValue">-</string>
+    <string name="dateText">Fecha</string>
+    <string name="permissionError">Permiso de ubicación requerido</string>
+    <string name="locationImageContentDesc">Imagen de ubicación</string>
+    <string name="weatherAnimContentDesc">Animación meteorológica</string>
+</resources>

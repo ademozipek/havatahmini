@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Прогноз погоды</string>
+    <string name="locationText">Место расположения</string>
+    <string name="weatherStatusText">Загрузка...</string>
+    <string name="feelsLikeText">Как будто</string>
+    <string name="degreeText">°C</string>
+    <string name="feelsLikeValue">-</string>
+    <string name="humidityValue">-</string>
+    <string name="humidityText">Влажность</string>
+    <string name="contact_us">Связаться с нами</string>
+    <string name="dateText">Дата</string>
+    <string name="permissionError">Требуется разрешение на местоположение</string>
+    <string name="locationImageContentDesc">Изображение местоположения</string>
+    <string name="weatherAnimContentDesc">Погодная анимация</string>
+</resources>

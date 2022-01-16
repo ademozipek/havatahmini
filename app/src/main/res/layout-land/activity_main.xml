@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="24dp"
+        android:paddingRight="24dp"
+        android:paddingLeft="24dp">
+
+    <ImageView
+        android:id="@+id/locationImage"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:srcCompat="@drawable/place"
+        android:contentDescription="@string/locationImageContentDesc"/>
+
+    <TextView
+        android:id="@+id/locationText"
+        android:paddingLeft="4dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        style="@style/h2"
+        android:text="@string/locationText" />
+
+        <TextView
+            android:id="@+id/feelsLikeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feelsLikeText"
+            android:paddingRight="16dp"
+            style="@style/body1" />
+
+        <TextView
+            android:id="@+id/feelsLikeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp"
+            android:text="@string/feelsLikeValue"
+            style="@style/body2" />
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:paddingRight="24dp">
+    <TextView
+        android:id="@+id/humidityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="16dp"
+        android:text="@string/humidityText"
+        style="@style/body1" />
+
+    <TextView
+        android:id="@+id/humidityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="16dp"
+        android:text="@string/humidityValue"
+        style="@style/body2" />
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/bodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <ImageView
+            android:id="@+id/animationImage"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:maxHeight="240dp"
+            app:srcCompat="@drawable/loading_anim"
+            android:contentDescription="@string/weatherAnimContentDesc"/>
+
+        <TextView
+            android:id="@+id/weatherStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h3"
+            android:text="@string/weatherStatusText">
+        </TextView>
+
+        <TextView
+            android:id="@+id/degreeText"
+            android:paddingTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h2"
+            android:text="@string/degreeText"></TextView>
+
+        <TextView
+            android:id="@+id/dateText"
+            style="@style/body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dateText"
+            android:layout_marginTop="4dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabContactUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:contentDescription="@string/contact_us"
+            android:layout_marginRight="8dp"
+            android:onClick="contactUs"
+            android:layout_gravity="end"
+            android:src="@drawable/email" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
