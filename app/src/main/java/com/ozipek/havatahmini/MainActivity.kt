@@ -3,6 +3,7 @@ package com.ozipek.havatahmini
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -24,6 +25,8 @@ private lateinit var binding : ActivityMainBinding
 private lateinit var viewModel: WeatherViewModel
 
 private lateinit var fusedLocationClient: FusedLocationProviderClient
+
+private var mediaPlayer = MediaPlayer()
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,42 +54,65 @@ class MainActivity : AppCompatActivity() {
             binding.feelsLikeValue.text = "${it.main?.feelsLike?.toInt().toString()}°C"
             binding.humidityValue.text = "${it.main?.humidity?.toInt().toString()}%"
             binding.dateText.text = SimpleDateFormat("dd MMMM yyyy EEEE").format(Date())
+            binding.minDegreeText?.text =  "${getString(R.string.minDegreeText)}${it.main?.tempMin?.toInt().toString()}°C"
+            binding.maxDegreeText?.text = "${getString(R.string.maxDegreeText)}${it.main?.tempMax?.toInt().toString()}°C"
             changeAnimation(it.weather?.id?.toInt())
         })
-
 
         //Konum izni görünümle alakalı olduğunu düşündüğümden burada istedim.
         askPermission()
 
-
     }
 
     private fun changeAnimation(id: Int?) {
+        if(mediaPlayer.isPlaying){
+            mediaPlayer.stop()
+        }
         when(id){
-            in 200..299 -> Glide
-                .with(this)
-                .load(R.drawable.storm)
-                .into(binding.animationImage)
-            in 300..399 -> Glide
-                .with(this)
-                .load(R.drawable.drizzle)
-                .into(binding.animationImage)
-            in 500..599 -> Glide
-                .with(this)
-                .load(R.drawable.rain)
-                .into(binding.animationImage)
-            in 600..699 -> Glide
-                .with(this)
-                .load(R.drawable.snow)
-                .into(binding.animationImage)
+            in 200..299 -> {
+                Glide
+                    .with(this)
+                    .load(R.drawable.storm)
+                    .into(binding.animationImage)
+                mediaPlayer = MediaPlayer.create(this, R.raw.thunder)
+                mediaPlayer.start()
+            }
+            in 300..399 -> {
+                Glide
+                    .with(this)
+                    .load(R.drawable.drizzle)
+                    .into(binding.animationImage)
+                mediaPlayer = MediaPlayer.create(this, R.raw.rain)
+                mediaPlayer.start()
+            }
+            in 500..599 -> {
+                Glide
+                    .with(this)
+                    .load(R.drawable.rain)
+                    .into(binding.animationImage)
+                mediaPlayer = MediaPlayer.create(this, R.raw.rain)
+                mediaPlayer.start()
+            }
+            in 600..699 -> {
+                Glide
+                    .with(this)
+                    .load(R.drawable.snow)
+                    .into(binding.animationImage)
+                mediaPlayer = MediaPlayer.create(this, R.raw.snow)
+                mediaPlayer.start()
+            }
             in 700..799 -> Glide
                 .with(this)
                 .load(R.drawable.fog)
                 .into(binding.animationImage)
-            800 -> Glide
-                .with(this)
-                .load(R.drawable.sunny)
-                .into(binding.animationImage)
+            800 -> {
+                Glide
+                    .with(this)
+                    .load(R.drawable.sunny)
+                    .into(binding.animationImage)
+                mediaPlayer = MediaPlayer.create(this, R.raw.sunny)
+                mediaPlayer.start()
+            }
             in 801..899 -> Glide
                 .with(this)
                 .load(R.drawable.cloudly)

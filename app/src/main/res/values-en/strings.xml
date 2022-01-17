@@ -15,4 +15,7 @@
     <string name="weatherAnimContentDesc">Weather Animation</string>
     <string name="locationPermissionText">You Need to Give Location Permission.</string>
     <string name="snackbarButton">GIVE PERMISSION</string>
+    <string name="minDegreeText">"Lowest "</string>
+    <string name="maxDegreeText">"Highest "</string>
+    <string name="seperatorText">" / "</string>
 </resources>

@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/locationImage"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:srcCompat="@drawable/place"
         android:contentDescription="@string/locationImageContentDesc"/>
 
@@ -31,7 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        style="@style/h2"
+        style="@style/h3"
         android:text="@string/locationText" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:text="@string/feelsLikeText"
             android:paddingRight="16dp"
-            style="@style/body1" />
+            style="@style/text2" />
 
         <TextView
             android:id="@+id/feelsLikeValue"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:paddingRight="16dp"
             android:text="@string/feelsLikeValue"
-            style="@style/body2" />
+            style="@style/text1" />
 
     </LinearLayout>
 <LinearLayout
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:paddingRight="16dp"
         android:text="@string/humidityText"
-        style="@style/body1" />
+        style="@style/text2" />
 
     <TextView
         android:id="@+id/humidityValue"
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:paddingRight="16dp"
         android:text="@string/humidityValue"
-        style="@style/body2" />
+        style="@style/text1" />
 </LinearLayout>
     <LinearLayout
         android:id="@+id/bodyLayout"
@@ -103,6 +103,33 @@
             android:layout_height="wrap_content"
             style="@style/h2"
             android:text="@string/degreeText"></TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/minDegreeText"
+                style="@style/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minDegreeText"/>
+
+            <TextView
+                android:id="@+id/seperatorText"
+                style="@style/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seperatorText"/>
+
+            <TextView
+                android:id="@+id/maxDegreeText"
+                style="@style/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/maxDegreeText"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/dateText"

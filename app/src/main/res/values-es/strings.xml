@@ -15,4 +15,7 @@
     <string name="weatherAnimContentDesc">Animación meteorológica</string>
     <string name="locationPermissionText">Necesita dar permiso de ubicación.</string>
     <string name="snackbarButton">DAR PERMISO</string>
+    <string name="minDegreeText">"más bajo "</string>
+    <string name="maxDegreeText">"más alta "</string>
+    <string name="seperatorText">" / "</string>
 </resources>

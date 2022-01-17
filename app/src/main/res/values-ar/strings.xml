@@ -15,4 +15,7 @@
     <string name="weatherAnimContentDesc">الرسوم المتحركة الطقس</string>
     <string name="locationPermissionText">تحتاج إلى إعطاء إذن الموقع.</string>
     <string name="snackbarButton">إعطاء إذن</string>
+    <string name="minDegreeText">"الأدنى "</string>
+    <string name="maxDegreeText">"الأعلى "</string>
+    <string name="seperatorText">" / "</string>
 </resources>

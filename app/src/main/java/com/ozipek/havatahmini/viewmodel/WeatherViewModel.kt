@@ -1,8 +1,10 @@
 package com.ozipek.havatahmini.viewmodel
 
 import android.annotation.SuppressLint
+import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.net.Uri
 import android.os.Looper
 import android.util.Log
@@ -15,9 +17,13 @@ import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.*
 import com.google.gson.GsonBuilder
 import com.ozipek.havatahmini.model.Data
+import kotlinx.coroutines.*
 import java.util.*
+import kotlin.coroutines.CoroutineContext
 
 class WeatherViewModel : ViewModel() {
+
+    private lateinit var job : Job
 
     private val URL : String = "https://api.openweathermap.org/data/2.5/weather"
     private val API_KEY : String = "c75d86551aff588b8362b085f0fb5234"
@@ -38,9 +44,10 @@ class WeatherViewModel : ViewModel() {
 
     private lateinit var locationCallback: LocationCallback
 
-    private lateinit var language : String
+    private var language : String
 
     init{
+        job = Job()
         weatherURL = ""
         language = Locale.getDefault().toLanguageTag().toString().take(2)
     }
@@ -69,22 +76,27 @@ class WeatherViewModel : ViewModel() {
     }
 
     private fun getWeatherData(context:Context){
+        job = GlobalScope.launch(Dispatchers.IO){
+            weatherURL = "$URL?lat=${lat.value}" +
+                    "&lon=${lon.value}" +
+                    "&appid=$API_KEY" +
+                    "&units=metric" +
+                    "&lang=$language"
+            val stringRequest = StringRequest(Request.Method.POST,weatherURL, {
+                val gsonBuilder = GsonBuilder()
+                val gson = gsonBuilder.create()
+                var cut = it.toString().replace("[","")
+                cut = cut.replace("]","")
+                /*API'dan gelen veride [ ] alanları bulunuyor
+                bu da gson converterda hataya sebep oluyor, o yüzden replace kullandım*/
+                _weatherData.value = gson.fromJson("$cut", Data::class.java)
+            }, {
+                Log.e("WeatherViewModel", it.localizedMessage)
+            })
 
-        weatherURL = "$URL?lat=${lat.value}&lon=${lon.value}&appid=$API_KEY&units=metric&mode=json&lang=$language"
-        val stringRequest = StringRequest(Request.Method.POST,weatherURL, {
-            val gsonBuilder = GsonBuilder()
-            val gson = gsonBuilder.create()
-            var cut = it.toString().replace("[","")
-            cut = cut.replace("]","")
-            /*API'dan gelen veride [ ] alanları bulunuyor
-            bu da gson converterda hataya sebep oluyor, o yüzden replace kullandım*/
-            _weatherData.value = gson.fromJson("$cut", Data::class.java)
-        }, {
-            Log.e("WeatherViewModel", it.localizedMessage)
-        })
-
-        var requestQueue = Volley.newRequestQueue(context)
-        requestQueue.add(stringRequest)
+            var requestQueue = Volley.newRequestQueue(context)
+            requestQueue.add(stringRequest)
+        }
 
     }
 

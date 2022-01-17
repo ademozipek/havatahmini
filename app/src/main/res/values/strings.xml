@@ -14,4 +14,7 @@
     <string name="weatherAnimContentDesc">Hava Durumu Animasyonu</string>
     <string name="locationPermissionText">Konum İzni Vermeniz Gerekmektedir.</string>
     <string name="snackbarButton">İZİN VER</string>
+    <string name="minDegreeText">En Düşük </string>
+    <string name="maxDegreeText">En Yüksek </string>
+    <string name="seperatorText"> / </string>
 </resources>

@@ -15,4 +15,7 @@
     <string name="weatherAnimContentDesc">Погодная анимация</string>
     <string name="locationPermissionText">Вам нужно дать разрешение на местоположение.</string>
     <string name="snackbarButton">ДАВАТЬ РАЗРЕШЕНИЕ</string>
+    <string name="minDegreeText">"Самый низкий "</string>
+    <string name="maxDegreeText">"Наибольший "</string>
+    <string name="seperatorText">" / "</string>
 </resources>
